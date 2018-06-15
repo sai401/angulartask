@@ -12,6 +12,7 @@ import { Route, createComponent } from '@angular/compiler/src/core';
 const appRoutes: Routes = [
   { path: 'list', component: ListEmployeesComponent },
   { path: 'create', component: CreateEmployeeComponent },
+  { path: 'demo', loadChildren: './demo/demo.module#DemoModule' },
   { path: '', redirectTo: 'list', pathMatch: 'full' }
 ];
 
@@ -26,7 +27,7 @@ const appRoutes: Routes = [
     BsDatepickerModule.forRoot(),
     RouterModule.forRoot(appRoutes),
     FormsModule,
-   
+
   ],
   providers: [],
   bootstrap: [AppComponent]
