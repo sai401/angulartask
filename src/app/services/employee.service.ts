@@ -1,12 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Employee } from '../models/employee.model';
 
-@Component({
-  selector: 'app-list-employees',
-  templateUrl: './list-employees.component.html',
-  styleUrls: ['./list-employees.component.css']
-})
-export class ListEmployeesComponent implements OnInit {
+@Injectable()
+export class EmployeeService {
+
+  constructor() { }
   employees: Employee[] = [
     {
       id: 1,
@@ -42,9 +40,8 @@ export class ListEmployeesComponent implements OnInit {
       photoPath: 'assets/images/03.jpg'
     },
   ];
-  constructor() { }
-
-  ngOnInit() {
+  getEmployees():Employee[]{
+    return this.employees;
   }
 
 }

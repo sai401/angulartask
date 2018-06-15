@@ -5,9 +5,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 import { AppComponent } from './app.component';
-import { ListEmployeesComponent } from './employee/list-employees.component';
-import { CreateEmployeeComponent } from './employee/create-employee.component';
+
 import { Route, createComponent } from '@angular/compiler/src/core';
+import { DisplayEmployeeComponent } from './display-employee/display-employee.component';
+import { ListEmployeesComponent } from './list-employees/list-employees.component';
+import { CreateEmployeeComponent } from './create-employee/create-employee.component';
+import { EmployeeService } from './services/employee.service';
 
 const appRoutes: Routes = [
   { path: 'list', component: ListEmployeesComponent },
@@ -20,7 +23,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     ListEmployeesComponent,
-    CreateEmployeeComponent
+    CreateEmployeeComponent,
+    DisplayEmployeeComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +33,7 @@ const appRoutes: Routes = [
     FormsModule,
 
   ],
-  providers: [],
+  providers: [EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

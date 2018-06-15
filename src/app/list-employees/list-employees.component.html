@@ -1,0 +1,7 @@
+<div>
+<strong> Click on any employee label block to show child data in parent component</strong> 
+ <div *ngIf="dataFromChild">Employee Name : <strong>{{dataFromChild}}</strong></div>
+</div>
+<div  *ngFor="let emp of employees">
+  <app-display-employee [employee]="emp" (empDetails)=getResult($event)></app-display-employee>
+</div>

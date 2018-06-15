@@ -1,12 +1,15 @@
-<div class="panel panel-primary" *ngFor="let employee of employees">
+<div class="panel panel-primary" (click)="getEmployeeDetails(employee)">
   <div class="panel-heading">
     <h3 class="panel-title">{{employee.name}}</h3>
   </div>
   <div class="panel-body">
+
     <div class="col-xs-10">
+
       <div class="row vertical-align">
+
         <div class="col-xs-4">
-          <img class="imageClass" [src]="employee.photoPath">
+          <img class="imageClass" [src]="employee.photoPath" />
         </div>
         <div class="col-xs-8">
 
@@ -18,7 +21,6 @@
               : {{employee.gender}}
             </div>
           </div>
-
           <div class="row">
             <div class="col-xs-6">
               Date of Birth
@@ -27,7 +29,6 @@
               : {{employee.dateOfBirth | date}}
             </div>
           </div>
-
           <div class="row">
             <div class="col-xs-6">
               Contact Preference
@@ -36,7 +37,6 @@
               : {{employee.contactPreference}}
             </div>
           </div>
-
           <div class="row">
             <div class="col-xs-6">
               Phone
@@ -45,7 +45,6 @@
               : {{employee.phoneNumber}}
             </div>
           </div>
-
           <div class="row">
             <div class="col-xs-6">
               Email
@@ -54,7 +53,6 @@
               : {{employee.email}}
             </div>
           </div>
-
           <div class="row">
             <div class="col-xs-6">
               Department
@@ -63,7 +61,6 @@
               : {{employee.department}}
             </div>
           </div>
-
           <div class="row">
             <div class="col-xs-6">
               Is Active
@@ -74,6 +71,7 @@
           </div>
 
         </div>
+
       </div>
     </div>
   </div>
